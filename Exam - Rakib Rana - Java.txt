@@ -1,0 +1,171 @@
+Exam - Rakib Rana - Java
+
+
+- Application -
+
+@SpringBootApplication
+@EnableFeignClients
+
+public class ProductInventory {
+	public static void main (String[] args){
+	Springbootapplication.run(ProductInventory.class args);
+	}
+	@Bean
+	public RestTemplate restTemplate() {
+	return new RestTemplate();
+	}
+}
+
+
+
+
+
+
+
+- ProductService -
+
+
+import Service
+
+@Service
+public class ProductService
+	private final ProductClient productClient;
+	public ProductService(ProductClient productClient){
+	this.ProductClient = ProductClient;
+	}
+
+	public ProductResponse fetchProduct(){
+	ProductResponse pd = productClient.addProduct();
+	
+
+
+
+
+- ProductController -
+
+import PostMapping
+import RestController
+import AllArgsConstructor
+
+@RestController
+@AllArgsConstructor
+public class ProductController
+	private final ProductController ProductService;
+
+	public ProductController(ProductService productservice){
+	this.ProductService = ProductService;
+	}
+
+	@Getmapping("/product")
+	public ArrayList <product> addProduct() {
+		
+	return "";
+}
+@PostMapping("/product")
+public String addProduct(@RequestBody Product product){
+	productservice.addProduct(Product.getproduct()
+
+
+
+
+- ProductResponse -
+
+
+import data
+import lombok
+
+@Data
+public class getProductById{
+	@JsonProperty("productId: ")
+	private String productId;
+	
+	@JsonProperty("productName: ")
+	private String productName;
+
+	@JsonProperty("quantity: ")
+	private int quantity;
+
+	@JsonProperty("warehouseId: ")
+	private int warehouseId;
+}
+	
+
+
+
+-  ProductClient -
+
+import FeignCLient 
+import PostMapping
+
+@FeignClient(name = "Products", url = "https//:localhost8080/")
+public interface ProductClient{
+	@Getmapping("/addproduct")
+	getProductById  addProduct();
+
+
+
+
+ - WarehouseService -
+
+@Service
+public class WarehouseService {
+	private final getWarehouseById
+	public WarehouseService()
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@Data
+public class getWarehouseById{
+	@JsonProperty("warehouseId: ")
+	private int userId;
+	
+	@JsonProperty("location: ")
+	private int userId;
+
+	@JsonProperty("capacity: ")
+	private int userId;
+}
+
+
+
+
+- Resource -
+server.port = 8080
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
